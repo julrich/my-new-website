@@ -1,0 +1,35 @@
+{
+  "name": "energyui-storyblok-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pull-content-schema": "storyblok pull-components --space $STORYBLOK_SPACE_ID -p types/ && mv types/components.$STORYBLOK_SPACE_ID.json types/components-schema.json",
+    "generate-content-types": "npm run pull-content-schema && storyblok-generate-ts source=./types/components-schema.json target=./types/components-schema"
+  },
+  "dependencies": {
+    "@energyui/design-system": "0.0.10",
+    "@kickstartds/base": "2.2.1-next.1",
+    "@kickstartds/content": "2.2.0-next.0",
+    "@kickstartds/core": "2.2.1-next.0",
+    "@kickstartds/form": "2.2.1-next.1",
+    "@storyblok/react": "^2.2.1",
+    "@types/node": "20.4.5",
+    "@types/react": "18.2.17",
+    "@types/react-dom": "18.2.7",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.12",
+    "next": "13.4.12",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "storyblok-rich-text-react-renderer": "^2.9.0",
+    "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "storyblok": "^3.10.1",
+    "storyblok-generate-ts": "^1.15.0"
+  }
+}
